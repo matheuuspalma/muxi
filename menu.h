@@ -14,3 +14,4 @@ int verificar(int[9]);
 /*********questao 3**********/
 
 int questao3();
+char** stringsplit(const char *text, char separator, int *length);

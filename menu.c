@@ -48,6 +48,8 @@ int main(){
     }else if(input == 7){  // verificando opção sair do menu
         printf(" Encerrado ! \n");
         return 0;
+    }else{
+        printf("Escolha uma das opções. Entrada Invalida!!\n");
     }
 
     main();
