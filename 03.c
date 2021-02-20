@@ -1,6 +1,6 @@
 /* Matheus Lucas Palma de Oliveira  
    Processo Seletivo Muxi
-   Questão 02
+   Questão 03
 */
 
 #include <stdio.h>
@@ -11,25 +11,19 @@
 
 
 int questao3(){
-
     char *string; 
     char separator[2];  //separetor + end of line
     int lenght, i;
     char **substring;
     
-
     printf("Entre com o separador que sera usado! \n");
     scanf("%s", separator);
     printf(" Entre com o tamanho total da string. \n");
     scanf("%d", &lenght);
-    
     printf(" Entre com a string composta por substrings, dividas pelo um separador especificado! \n");
-    
+
     string = malloc(lenght*sizeof( char *));
-
     scanf("%s", &string[0]);
-
-  
 
     substring = stringsplit(string, separator[0], &lenght);
 
@@ -41,19 +35,14 @@ int questao3(){
             printf(" * %s \n", substring[i]);
         }
     }
-
     free(substring);
-
     return 0;
 }
-
-    
 
 char** stringsplit(const char *string, char separator, int *length){
     if( string == NULL || length == NULL){
         return NULL;
     }
-
     int size,i,j,k, cont;
     char **substring; 
 
@@ -85,7 +74,6 @@ char** stringsplit(const char *string, char separator, int *length){
         }
         substring[j] = malloc((cont) * sizeof( char *));
     }
-    
     while(  i < size ){
         if(string[i] != separator  && i + 1 != size){                  
             substring[j][k] = string[i];
@@ -111,6 +99,5 @@ char** stringsplit(const char *string, char separator, int *length){
         i++;
     }
     length[0] = j;
-
     return substring;
 }
